@@ -11,11 +11,99 @@ const NAV_ITEMS = [
   { key: 'tutor', label: 'AI Tutor' },
 ];
 
+// Professional SVG Icons
+const Icons = {
+  Brain: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C8.5 2 6 4.5 6 8c0 1.5.5 2.8 1.3 3.9C5.8 13.2 4 15.8 4 19c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2 0-3.2-1.8-5.8-3.3-7.1C17.5 10.8 18 9.5 18 8c0-3.5-2.5-6-6-6z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      <path d="M9 8c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      <path d="M7 12c1.5-1 3.5-1 5 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 12c1.5-1 3.5-1 5 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="10" cy="10" r="1" fill="currentColor"/>
+    </svg>
+  ),
+  Microscope: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 3h6v2H9V3z" fill="currentColor"/>
+      <path d="M8 5h8v2H8V5z" fill="currentColor"/>
+      <path d="M7 7h10v2H7V7z" fill="currentColor"/>
+      <path d="M6 9h12v2H6V9z" fill="currentColor"/>
+      <path d="M5 11h14v2H5v-2z" fill="currentColor"/>
+      <path d="M4 13h16v2H4v-2z" fill="currentColor"/>
+      <path d="M3 15h18v2H3v-2z" fill="currentColor"/>
+      <path d="M2 17h20v2H2v-2z" fill="currentColor"/>
+      <circle cx="12" cy="19" r="2" fill="currentColor"/>
+    </svg>
+  ),
+  Lightning: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    </svg>
+  ),
+  Lightbulb: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 21h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 3a6 6 0 0 0-6 6c0 2.5 1.5 4.5 3.5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 3a6 6 0 0 1 6 6c0 2.5-1.5 4.5-3.5 5.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  CheckCircle: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="m9 11 3 3L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Eye: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Headphones: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Book: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  Hand: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  BookOpen: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  AlertTriangle: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 9v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M12 17h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+};
+
 const Header: React.FC<{ active: string; onNav: (key: string) => void }> = ({ active, onNav }) => (
   <header className="glassmorphism-header fixed top-0 left-0 w-full py-4 px-8 flex items-center justify-between z-10">
     <div className="flex items-center space-x-3">
-      <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg">
-        <span className="text-white font-bold text-lg">AI</span>
+      <div className="w-10 h-10 rounded-xl overflow-hidden">
+        <img 
+          src="/brain-logo.png" 
+          alt="Brain Logo" 
+          className="w-full h-full object-cover"
+        />
       </div>
       <h1 className="text-2xl font-bold text-white">
         VARK Learning Assistant
@@ -48,8 +136,12 @@ const HomePage: React.FC<{ onStartQuiz: () => void }> = ({ onStartQuiz }) => (
     <div className="w-full max-w-4xl px-4">
       <div className="glassmorphism-card p-8 text-center mb-8">
         <div className="mb-6">
-          <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-full mx-auto flex items-center justify-center shadow-xl mb-4">
-            <span className="text-white text-2xl font-bold">🎓</span>
+          <div className="w-20 h-20 rounded-full mx-auto flex items-center justify-center shadow-xl mb-4 overflow-hidden">
+            <img 
+              src="/brain-logo.png" 
+              alt="Brain Logo" 
+              className="w-16 h-16 object-cover"
+            />
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">
             Discover Your Learning Style
@@ -68,8 +160,8 @@ const HomePage: React.FC<{ onStartQuiz: () => void }> = ({ onStartQuiz }) => (
       
       <div className="glassmorphism-card p-8 text-left">
         <h3 className="text-2xl font-bold text-red-300 mb-4 flex items-center">
-          <span className="mr-3">🔬</span>
-          What is the VARK Model?
+          <Icons.Microscope />
+          <span className="ml-3">What is the VARK Model?</span>
         </h3>
         <p className="text-gray-200 mb-6 leading-relaxed">
           The VARK model is a proven framework that categorizes learners into four distinct types: 
@@ -81,8 +173,8 @@ const HomePage: React.FC<{ onStartQuiz: () => void }> = ({ onStartQuiz }) => (
         </p>
         
         <h4 className="text-xl font-semibold text-red-300 mb-3 flex items-center">
-          <span className="mr-2">⚡</span>
-          How It Works
+          <Icons.Lightning />
+          <span className="ml-2">How It Works</span>
         </h4>
         <ul className="space-y-3 mb-6">
           <li className="flex items-start">
@@ -101,8 +193,8 @@ const HomePage: React.FC<{ onStartQuiz: () => void }> = ({ onStartQuiz }) => (
         
         <div className="glassmorphism-content p-4 rounded-xl">
           <div className="flex items-center">
-            <span className="text-2xl mr-3">💡</span>
-            <div>
+            <Icons.Lightbulb />
+            <div className="ml-3">
               <span className="font-semibold text-red-300">Why VARK?</span>
               <p className="text-sm text-gray-300 mt-1">Understanding your learning style can improve your study efficiency by up to 40%!</p>
             </div>
@@ -140,7 +232,7 @@ const QuizPage: React.FC<{ onComplete: (style: LearningStyle) => void }> = ({ on
         <div className="glassmorphism-card p-8 text-center max-w-2xl">
           <div className="mb-6">
             <div className="w-24 h-24 bg-gradient-to-br from-red-500 to-red-700 rounded-full mx-auto flex items-center justify-center shadow-xl mb-4">
-              <span className="text-white text-3xl">🎉</span>
+              <Icons.CheckCircle />
             </div>
             <h2 className="text-3xl font-bold text-red-300 mb-2">
               Your Learning Style: <span className="capitalize text-red-200">{result}</span>
@@ -229,11 +321,11 @@ const TutorPage: React.FC<{ learningStyle: LearningStyle }> = ({ learningStyle }
 
   const getLearningStyleIcon = (style: LearningStyle) => {
     switch (style) {
-      case 'visual': return '👁️';
-      case 'auditory': return '🎧';
-      case 'readwrite': return '📖';
-      case 'kinesthetic': return '🤲';
-      default: return '🎓';
+      case 'visual': return <Icons.Eye />;
+      case 'auditory': return <Icons.Headphones />;
+      case 'readwrite': return <Icons.Book />;
+      case 'kinesthetic': return <Icons.Hand />;
+      default: return <Icons.Brain />;
     }
   };
 
@@ -242,7 +334,9 @@ const TutorPage: React.FC<{ learningStyle: LearningStyle }> = ({ learningStyle }
       <div className="glassmorphism-card p-8 max-w-4xl w-full">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <span className="text-4xl mr-3">{getLearningStyleIcon(learningStyle)}</span>
+            <div className="text-4xl mr-3 text-red-300">
+              {getLearningStyleIcon(learningStyle)}
+            </div>
             <h2 className="text-3xl font-bold text-white">
               AI Learning Assistant
             </h2>
@@ -280,8 +374,8 @@ const TutorPage: React.FC<{ learningStyle: LearningStyle }> = ({ learningStyle }
         {error && (
           <div className="glassmorphism-content p-4 rounded-xl border border-red-500/30 text-red-300 mb-6">
             <div className="flex items-center">
-              <span className="mr-2">⚠️</span>
-              {error}
+              <Icons.AlertTriangle />
+              <span className="ml-2">{error}</span>
             </div>
           </div>
         )}
@@ -289,8 +383,8 @@ const TutorPage: React.FC<{ learningStyle: LearningStyle }> = ({ learningStyle }
         {content && (
           <div className="glassmorphism-content rounded-xl p-6">
             <div className="flex items-center mb-4">
-              <span className="text-2xl mr-3">📚</span>
-              <h3 className="text-xl font-semibold text-white">Your Personalized Learning Content</h3>
+              <Icons.BookOpen />
+              <h3 className="text-xl font-semibold text-white ml-3">Your Personalized Learning Content</h3>
             </div>
             <div className="glassmorphism-scrollbar max-h-96 overflow-y-auto p-6 glassmorphism-content rounded-xl">
               <div className="whitespace-pre-wrap text-gray-200 leading-relaxed text-lg">
